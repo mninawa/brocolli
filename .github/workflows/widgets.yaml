@@ -63,5 +63,5 @@ jobs:
         run: |
           cd widgets
           echo ${{ secrets.DOCKERHUB_TOKEN }} | docker login -u ${{ secrets.DOCKERHUB_USERNAME }} --password-stdin
-          docker build -t erxes/erxes-widgets:${GITHUB_REF#refs/heads/} -f Dockerfile .
-          docker push erxes/erxes-widgets:${GITHUB_REF#refs/heads/}
+          docker build -t mninawa/erxes-widgets:${GITHUB_REF#refs/heads/} -f Dockerfile .
+          docker push mninawa/erxes-widgets:${GITHUB_REF#refs/heads/}
