@@ -63,5 +63,5 @@ jobs:
         run: |
           cd engages-email-sender
           echo ${{ secrets.DOCKERHUB_TOKEN }} | docker login -u ${{ secrets.DOCKERHUB_USERNAME }} --password-stdin
-          docker build -t erxes/erxes-engages-email-sender:${GITHUB_REF#refs/heads/} -f Dockerfile .
-          docker push erxes/erxes-engages-email-sender:${GITHUB_REF#refs/heads/}
+          docker build -t mninawa/erxes-engages-email-sender:${GITHUB_REF#refs/heads/} -f Dockerfile .
+          docker push mninawa/erxes-engages-email-sender:${GITHUB_REF#refs/heads/}
