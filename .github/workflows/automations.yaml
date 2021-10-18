@@ -83,5 +83,5 @@ jobs:
         run: |
           cd automations
           echo ${{ secrets.DOCKERHUB_TOKEN }} | docker login -u ${{ secrets.DOCKERHUB_USERNAME }} --password-stdin
-          docker build -t erxes/erxes-automations:${GITHUB_REF#refs/heads/} -f Dockerfile .
-          docker push erxes/erxes-automations:${GITHUB_REF#refs/heads/}
+          docker build -t mninawa/erxes-automations:${GITHUB_REF#refs/heads/} -f Dockerfile .
+          docker push mninawa/erxes-automations:${GITHUB_REF#refs/heads/}
