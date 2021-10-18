@@ -87,9 +87,9 @@ jobs:
       - name: Build docker image
         if: github.event_name == 'push' && ( github.ref == 'refs/heads/master' || github.ref == 'refs/heads/develop' || github.ref == 'refs/heads/crons' || github.ref == 'refs/heads/workers')
         env:
-          BASE_IMAGE: erxes/erxes-api:base-12.19.1-slim
+          BASE_IMAGE: mninawa/erxes-api:base-12.19.1-slim
         run: |
           cd api
           echo ${{ secrets.DOCKERHUB_TOKEN }} | docker login -u ${{ secrets.DOCKERHUB_USERNAME }} --password-stdin
-          DOCKER_BUILDKIT=1 docker build --build-arg BASE_IMAGE=$BASE_IMAGE -t erxes/erxes-api:${GITHUB_REF#refs/heads/} -f api.Dockerfile .
-          docker push erxes/erxes-api:${GITHUB_REF#refs/heads/}
+          DOCKER_BUILDKIT=1 docker build --build-arg BASE_IMAGE=$BASE_IMAGE -t mninawa/erxes-api:${GITHUB_REF#refs/heads/} -f api.Dockerfile .
+          docker push mninawa/erxes-api:${GITHUB_REF#refs/heads/}
